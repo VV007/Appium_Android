@@ -64,7 +64,7 @@ public class test extends BaseClass{
 		//登录入口
 		pageManager.getPageMyInfo().LoginPage();
 		
-		/*
+		/**
 		 * 判断是否登录，如果未登录，则进入登录流程，如果已经登录，则返回
 		 * */
 		//注册
@@ -75,8 +75,7 @@ public class test extends BaseClass{
 			pageManager.getPageLogin().LoginAction();
 			pageManager.getPageMyInfo().BackHomeView();
 			vcan.iSLogin = "Yes";
-		}
-		else{
+		}else{
 			//进入个人中心
 		}
 		
