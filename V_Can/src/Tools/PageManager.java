@@ -2,7 +2,10 @@ package Tools;
 
 import android.graphics.pdf.PdfDocument.PageInfo;
 import AccountInfomation.PageLogin;
+import AccountInfomation.PageMemberPoints;
+import AccountInfomation.PageMyCoupons;
 import AccountInfomation.PageMyInfo;
+import AccountInfomation.PageNewCityCards;
 import AccountInfomation.PageRegister;
 import AccountInfomation.PageResetPassword;
 import PageExplore.PageExplore;
@@ -25,6 +28,9 @@ public class PageManager {
 	PageHome pageHome;
 	PageOpenedCities pageOpenedCities;
 	PageMovies pageMovies;
+	PageMemberPoints pageMemberPoints;
+	PageMyCoupons pageMyCoupons;
+	PageNewCityCards pageNewCityCards;
 	
 	public PageManager(V_Can vcan){
 		this.vcan = vcan;
@@ -98,6 +104,27 @@ public class PageManager {
 			pageMovies = new PageMovies(vcan);
 		}
 		return pageMovies;
+	}
+	
+	public PageMemberPoints getPageMemberPoints(){
+		if(pageMemberPoints == null){
+			pageMemberPoints = new PageMemberPoints(vcan);
+		}
+		return pageMemberPoints;
+	}
+	
+	public PageMyCoupons getPageMyCoupons(){
+		if(pageMyCoupons == null){
+			pageMyCoupons = new PageMyCoupons(vcan);
+		}
+		return pageMyCoupons;
+	}
+	
+	public PageNewCityCards getPageNewCityCards(){
+		if(pageNewCityCards == null){
+			pageNewCityCards = new PageNewCityCards(vcan);
+		}
+		return pageNewCityCards;
 	}
 	
 }

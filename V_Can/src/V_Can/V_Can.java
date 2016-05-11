@@ -67,12 +67,17 @@ public class V_Can {
 		return (WebElement)driver.findElements(By.id(id)).get(index);		
 	}
 	
+	//Class和Index查找控件
+	public WebElement findByClassAndIndex(String cls, int index){
+		return (WebElement)driver.findElements(By.className(cls)).get(index);		
+	}
+	
 	//根据ID点击
 	public void clickById(String id){
 		vbase = new VBase();
 		WebElement btn = vbase.waitForId(driver, id);
 		try{
-			if(!(btn == null)){
+			if(btn.isDisplayed()){
 				btn.click();
 			}
 		}catch(Exception e){
@@ -83,6 +88,11 @@ public class V_Can {
 	//返回
 	public void back(){
 		clickById("com.sht.smartcommunity:id/title_btn_left");
+	}
+	
+	//取消
+	public void cancel(){
+		clickById("com.sht.smartcommunity:id/btn_dialog_cancel");
 	}
 	
 	//Id是否存在

@@ -98,5 +98,20 @@ public class PageRegister {
 		InputVerificationCode();
 		VisitAgreement();
 		clickConfirmBtn();
+		//取消，不去抽奖
+		vcan.clickById("com.sht.smartcommunity:id/activity_dialog_press_regist_succ_close_bt");
+		
+		/*
+		//去抽奖
+		//com.sht.smartcommunity:id/activity_dialog_press_regist_succ_price_bt 去抽奖
+		//跳过输入推荐码  index 1 是确认输入  //输入框class android.widget.EditText
+		vcan.findByClassAndIndex("android.widget.Button", 0);
+		//点击抽奖
+		vcan.tapThePoint( (int)(vcan.Screen_Width()/2.0), (int)(vcan.Screen_Height()*0.32033));
+		//查看抽到的奖品
+		vcan.clickById("com.sht.smartcommunity:id/activity_dialog_press_succ_check");
+		//返回，回到侧边栏
+		vcan.clickById("com.sht.smartcommunity:id/title_btn_left");
+		*/
 	}
 }

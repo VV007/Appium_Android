@@ -21,12 +21,14 @@ public class PageMyInfo {
 		this.vcan = vcan; 
 	}
 	
+	//title_btn_left
 	public void getLoginImageView(){
-		vcan.findById("title_btn_left").click();
+		vcan.clickById("com.sht.smartcommunity:id/profile_image");
 	}
 	
+	//txt_name
 	public void clickLoginImageView(){
-		vcan.findById("txt_name").click();
+		vcan.clickById("com.sht.smartcommunity:id/imageView_photo");
 	}
 	
 	//进入登录页面/个人中心
@@ -57,10 +59,27 @@ public class PageMyInfo {
 	//我的新城势卡
 	public void gotoNewCityCard(){
 		vcan.clickByText("我的新城势卡");
-		vcan.clickByIdAndInput("com.sht.smartcommunity:id/et_shtCardNumber", "新城势卡卡号");
+		vcan.clickByIdAndInput("com.sht.smartcommunity:id/et_shtCardNumber", "3358880100000001379");
 		vcan.clickById("com.sht.smartcommunity:id/btn_nextStep");  //下一步
+		
+		//获取验证码
+		vcan.clickById("com.sht.smartcommunity:id/txt_count");
+		
+		
+		
+		//点击激活输入框
+		vcan.clickById("com.sht.smartcommunity:id/et_shtCardNumber");
+		
+		//绑定
+		vcan.clickById("com.sht.smartcommunity:id/btn_bindCard");
+		
+		//弹窗 需要设置交易密码  取消 确定
+		vcan.cancel();
+//		vcan.clickById("com.sht.smartcommunity:id/btn_dialog_ok");
+			
 		//非我方卡，不支持此交易
 		//您绑定的新城势卡未开通
+		vcan.back();
 		vcan.back();
 	}
 	
@@ -95,21 +114,39 @@ public class PageMyInfo {
 		vcan.back();
 	}
 	
+	//我的优惠券
+	public void gotoMyCoupons(){
+		vcan.clickByText("我的优惠券");
+//		PageMyCoupons myCoupons = new PageMyCoupons(vcan);
+//		myCoupons.viewAllOrderAction();
+		vcan.back();
+	}
+	
+	//会员积分
+	public void gotoMemberPoints(){
+		vcan.clickByText("会员积分");
+		PageMemberPoints memberpoints = new PageMemberPoints(vcan);
+		memberpoints.viewMyPoints();
+		vcan.back();
+	}
+	
 	//客服热线
 	public void gotoCall(){
 		vcan.clickByText("客服热线");
-		vcan.clickById("android:id/button1");
+		//com.sht.smartcommunity:id/btn_dialog_cancel
+		vcan.clickById("com.sht.smartcommunity:id/btn_dialog_cancel");
 	}
 	
 	//版本更新
 	public void gotoUpdate(){
 		vcan.clickByText("版本更新");
-		vcan.clickById("com.sht.smartcommunity:id/btn_dialog_cancel");
+		//com.sht.smartcommunity:id/btn_dialog_cancel
+		vcan.clickById("android:id/button1");
 	}
 	
 	//关于
 	public void gotoAbout(){
-		vcan.clickByText("关于");
+		vcan.clickByText("关于我们");
 		vcan.back();
 	}
 }

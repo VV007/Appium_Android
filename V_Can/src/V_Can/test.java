@@ -49,7 +49,7 @@ public class test extends BaseClass{
 		capabilities.setCapability("noReset", true);
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
 		
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		
 		vcan = new V_Can(driver);
 		pageManager = new PageManager(vcan);
@@ -60,7 +60,7 @@ public class test extends BaseClass{
 		Thread.sleep(600);
 		
 		while(true){
-			
+		
 		//登录入口
 		pageManager.getPageMyInfo().LoginPage();
 		
@@ -82,12 +82,15 @@ public class test extends BaseClass{
 		pageManager.getPageMyInfo().getLoginImageView();
 		
 		//侧边栏各进入一次并退出
-//		pageManager.getPageMyInfo().gotoNewCityCard(); //待完成
-//		pageManager.getPageMyInfo().gotoMyCard(); //待完成
+		pageManager.getPageMyInfo().gotoNewCityCard(); //待完成
+		pageManager.getPageMyInfo().gotoMyCard(); //待完成
 		
 //		pageManager.getPageMyInfo().gotoPayPassword(); //已完成
+
+//		pageManager.getPageMyInfo().gotoMyOrder(); //重新改
 		
-		pageManager.getPageMyInfo().gotoMyOrder(); //进行中
+//		pageManager.getPageMyInfo().gotoMyCoupons();     //待完成
+		pageManager.getPageMyInfo().gotoMemberPoints();  //进行中
 		
 //		pageManager.getPageMyInfo().gotoCall();     //已完成
 //		pageManager.getPageMyInfo().gotoUpdate();  //已完成
