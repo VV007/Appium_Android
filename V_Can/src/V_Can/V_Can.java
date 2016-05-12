@@ -48,8 +48,11 @@ public class V_Can {
 	//ID查找控件
 	public WebElement findById(String id){
 		vbase = new VBase();
-//		return vbase.waitForElementById1(driver, id);
-		return driver.findElementById(id);
+		vbase.waitForElementById(driver, id);
+		if(IdIsExist(id)){
+			return driver.findElementById(id);
+		}
+		return null;
 	}
 	
 	//名字查找控件
@@ -144,6 +147,13 @@ public class V_Can {
 	public void clickByIdAndIndx(String id,int index){
 		if(!(findByIdAndIndex(id,index) == null)){
 			findByIdAndIndex(id,index).click();
+		}
+	}
+	
+	//根据Class和Index点击Item
+	public void clickByClassAndIndx(String cls,int index){
+		if(!(findByClassAndIndex(cls,index) == null)){
+			findByIdAndIndex(cls,index).click();
 		}
 	}
 	

@@ -15,18 +15,21 @@ public class PageMemberPoints {
 	}
 	
 	public void viewNewCityCards(){
+		vcan.clickById("com.sht.smartcommunity:id/credit_look_btn");
 		
-		if(vcan.IdIsExist("com.sht.smartcommunity:id/credit_look_btn")){
-			vcan.clickById("com.sht.smartcommunity:id/credit_look_btn");
-			vcan.cancel();
-		}else{
+//		if(vcan.IdIsExist("com.sht.smartcommunity:id/credit_look_btn")){
+//			vcan.clickById("com.sht.smartcommunity:id/credit_look_btn");
+//			vcan.cancel();
+//		}else{
 			//进去看卡详情
-		}
-		vcan.back();
+//		}
+		
 	}
 	
 	public void viewMyPoints(){
 		pointsRule();
 		viewNewCityCards();
+		pointsRule();
+		vcan.back();
 	}
 }

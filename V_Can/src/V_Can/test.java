@@ -82,16 +82,17 @@ public class test extends BaseClass{
 		pageManager.getPageMyInfo().getLoginImageView();
 		
 		//侧边栏各进入一次并退出
-		pageManager.getPageMyInfo().gotoNewCityCard(); //待完成
+		pageManager.getPageMyInfo().gotoNewCityCard(); //已完成
+
 		pageManager.getPageMyInfo().gotoMyCard(); //待完成
 		
-//		pageManager.getPageMyInfo().gotoPayPassword(); //已完成
+		pageManager.getPageMyInfo().gotoPayPassword(); //已完成
 
-//		pageManager.getPageMyInfo().gotoMyOrder(); //重新改
+		pageManager.getPageMyInfo().gotoMyOrder(); //进行中
 		
-//		pageManager.getPageMyInfo().gotoMyCoupons();     //待完成
-		pageManager.getPageMyInfo().gotoMemberPoints();  //进行中
+		pageManager.getPageMyInfo().gotoMyCoupons();     //待完成
 		
+//		pageManager.getPageMyInfo().gotoMemberPoints();  //已完成
 //		pageManager.getPageMyInfo().gotoCall();     //已完成
 //		pageManager.getPageMyInfo().gotoUpdate();  //已完成
 //		pageManager.getPageMyInfo().gotoAbout();  //已完成
@@ -101,7 +102,7 @@ public class test extends BaseClass{
 //		pageManager.getPageHome().gotoSelectCity();
 //		pageManager.getPageOpenedCities().SelectCityByName();
 	
-		//选择电影
+		//选择电影 
 //		pageManager.getPageHome().gotoMovieTicket();
 //		pageManager.getPageMovies().SelectMovie();
 		
