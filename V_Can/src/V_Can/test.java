@@ -49,8 +49,6 @@ public class test extends BaseClass{
 		capabilities.setCapability("noReset", true);
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
 		
-//		Thread.sleep(2000);
-		
 		vcan = new V_Can(driver);
 		pageManager = new PageManager(vcan);
 		
@@ -70,32 +68,29 @@ public class test extends BaseClass{
 		//注册
 //		pageManager.getPageRegister().DoRegister();
 		
-		if(vcan.iSLogin.equals("No")){
+		if(vcan.iSLogin.equals("No") && (!vcan.IdIsExist("com.sht.smartcommunity:id/btn_exit"))){
 			//登录操作
 			pageManager.getPageLogin().LoginAction();
-			pageManager.getPageMyInfo().BackHomeView();
-			vcan.iSLogin = "Yes";
 		}else{
 			//进入个人中心
+			vcan.back();
 		}
-		
+		vcan.iSLogin = "Yes";
+		pageManager.getPageMyInfo().BackHomeView();
 		pageManager.getPageMyInfo().getLoginImageView();
 		
 		//侧边栏各进入一次并退出
-		pageManager.getPageMyInfo().gotoNewCityCard(); //已完成
+		pageManager.getPageMyInfo().gotoNewCityCard(); 
 
-		pageManager.getPageMyInfo().gotoMyCard(); //待完成
+		pageManager.getPageMyInfo().gotoMyCard(); 
+		pageManager.getPageMyInfo().gotoPayPassword(); 
+		pageManager.getPageMyInfo().gotoMyOrder(); //保险捕捉不到
+		pageManager.getPageMyInfo().gotoMyCoupons(); //因为没优惠券，未做查看详情
+		pageManager.getPageMyInfo().gotoMemberPoints();
+		pageManager.getPageMyInfo().gotoCall();
+		pageManager.getPageMyInfo().gotoUpdate();
+		pageManager.getPageMyInfo().gotoAbout(); 
 		
-		pageManager.getPageMyInfo().gotoPayPassword(); //已完成
-
-		pageManager.getPageMyInfo().gotoMyOrder(); //进行中
-		
-		pageManager.getPageMyInfo().gotoMyCoupons();     //待完成
-		
-//		pageManager.getPageMyInfo().gotoMemberPoints();  //已完成
-//		pageManager.getPageMyInfo().gotoCall();     //已完成
-//		pageManager.getPageMyInfo().gotoUpdate();  //已完成
-//		pageManager.getPageMyInfo().gotoAbout();  //已完成
 		pageManager.getPageMyInfo().BackHomeView();
 		
 		//选择城市
@@ -117,8 +112,6 @@ public class test extends BaseClass{
 			//进入个人中心	
 		}
 		
-		
-		
 		}
 		
 		/*
@@ -126,7 +119,6 @@ public class test extends BaseClass{
 		
 //		driver.findElement(By.id("edtTxt_pwd")).sendKeys(Crypt.crypt("******"));
 //		driver.findElement(By.id("edtTxt_pwd")).getText().SetSecure();
-		
 		
 		//通过xpath定位未成功
 //		driver.findElement(By.xpath("//className[contains(@text,'忘记')]")).click();
@@ -143,7 +135,6 @@ public class test extends BaseClass{
 		
 		//滑动
 //		driver.scrollTo("");
-		
 		
 //		driver.findElementByName("");
 		*/

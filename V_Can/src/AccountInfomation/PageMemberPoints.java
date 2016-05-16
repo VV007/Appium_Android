@@ -10,12 +10,12 @@ public class PageMemberPoints {
 	}
 	
 	public void pointsRule(){
-		vcan.clickById("com.sht.smartcommunity:id/credit_rules_tv");
+		vcan.clickById("com.sht.smartcommunity:id/ll_credit_rule");
 		vcan.back();
 	}
 	
 	public void viewNewCityCards(){
-		vcan.clickById("com.sht.smartcommunity:id/credit_look_btn");
+		vcan.clickById("com.sht.smartcommunity:id/rl_credit_animateLayout");
 		
 //		if(vcan.IdIsExist("com.sht.smartcommunity:id/credit_look_btn")){
 //			vcan.clickById("com.sht.smartcommunity:id/credit_look_btn");

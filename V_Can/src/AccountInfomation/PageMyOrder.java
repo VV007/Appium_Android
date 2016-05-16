@@ -183,6 +183,7 @@ public class PageMyOrder {
 	}
 	
 	public void firstTimeConfirm(){
+		//第一次进入会绑定
 		clickSendMessageButton();
 	}
 	
@@ -214,7 +215,6 @@ public class PageMyOrder {
 	public void viewAssuranceOrder(){
 		assuranceOrder();
 		firstTimeConfirm();
-		
 		
 		chooseOneAssuranceOrder();
 	}

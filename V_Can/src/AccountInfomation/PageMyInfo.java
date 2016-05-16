@@ -57,33 +57,10 @@ public class PageMyInfo {
 	 * 
 	 * */
 	//我的新城势卡
-	public void gotoNewCityCard(){
+	public void gotoNewCityCard() throws InterruptedException{
 		vcan.clickByText("我的新城势卡");
-		
-		/*
-		 * 如果没卡，则绑定；有卡直接略过
-		 * */
-		if(vcan.IdIsExist("com.sht.smartcommunity:id/et_shtCardNumber")){
-			vcan.clickByIdAndInput("com.sht.smartcommunity:id/et_shtCardNumber", "3358880100000001379");
-			vcan.clickById("com.sht.smartcommunity:id/btn_nextStep");  //下一步
-			//获取验证码
-			vcan.clickById("com.sht.smartcommunity:id/txt_count");
-			//点击激活输入框
-			vcan.clickById("com.sht.smartcommunity:id/et_shtCardNumber");
-			//绑定
-			vcan.clickById("com.sht.smartcommunity:id/btn_bindCard");
-			//弹窗 需要设置交易密码  取消 确定
-			vcan.cancel();
-//			vcan.clickById("com.sht.smartcommunity:id/btn_dialog_ok");
-				
-			//非我方卡，不支持此交易
-			//您绑定的新城势卡未开通
-			vcan.back();
-		}else{
-			vcan.clickById("com.sht.smartcommunity:id/title_imgbtn_right");
-//	//解绑	vcan.clickById("com.sht.smartcommunity:id/shtCard_more_unbind");
-			vcan.clickById("com.sht.smartcommunity:id/shtCard_more_cancel");
-		}
+		PageNewCityCards newCityCards = new PageNewCityCards(vcan);
+		newCityCards.viewAllInfo();
 		vcan.back();
 	}
 	
