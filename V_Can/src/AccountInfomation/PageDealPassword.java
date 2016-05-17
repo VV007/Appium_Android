@@ -52,7 +52,8 @@ public class PageDealPassword {
 		vcan.clickById("com.sht.smartcommunity:id/forget_getvalitity_tv");//获取验证码
 		
 		//不能输入中文
-		vcan.clickByIdAndInput("com.sht.smartcommunity:id/forget_bankcard_name_et", "身份证");
+//		vcan.clickByIdAndInput("", "身份证");
+		vcan.clickById("com.sht.smartcommunity:id/forget_bankcard_name_et");
 		Thread.sleep(9000);
 		vcan.clickByIdAndInput("com.sht.smartcommunity:id/forget_bankcard_et", "131122198710010247");
 		vcan.InputNewPayPassWord("com.sht.smartcommunity:id/edtTxt_pwd");//新交易密码

@@ -81,15 +81,15 @@ public class test extends BaseClass{
 		
 		//侧边栏各进入一次并退出
 		pageManager.getPageMyInfo().gotoNewCityCard(); 
-
-		pageManager.getPageMyInfo().gotoMyCard(); 
-		pageManager.getPageMyInfo().gotoPayPassword(); 
-		pageManager.getPageMyInfo().gotoMyOrder(); //保险捕捉不到
-		pageManager.getPageMyInfo().gotoMyCoupons(); //因为没优惠券，未做查看详情
-		pageManager.getPageMyInfo().gotoMemberPoints();
-		pageManager.getPageMyInfo().gotoCall();
-		pageManager.getPageMyInfo().gotoUpdate();
-		pageManager.getPageMyInfo().gotoAbout(); 
+		
+//		pageManager.getPageMyInfo().gotoMyCard(); 
+//		pageManager.getPageMyInfo().gotoPayPassword(); 
+//		pageManager.getPageMyInfo().gotoMyOrder(); //保险捕捉不到
+//		pageManager.getPageMyInfo().gotoMyCoupons(); //因为没优惠券，未做查看详情
+//		pageManager.getPageMyInfo().gotoMemberPoints();
+//		pageManager.getPageMyInfo().gotoCall();
+//		pageManager.getPageMyInfo().gotoUpdate();
+//		pageManager.getPageMyInfo().gotoAbout(); 
 		
 		pageManager.getPageMyInfo().BackHomeView();
 		

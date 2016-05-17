@@ -49,10 +49,23 @@ public class PageNewCityCards {
 		vcan.clickById("com.sht.smartcommunity:id/select_result");
 		vcan.back();
 	}
-
+	
 	//手机号码
 	public void phoneNum(){
 		vcan.clickById("com.sht.smartcommunity:id/llayout_account");
+		
+		vcan.clickByIdAndInput("com.sht.smartcommunity:id/putnewphone_edt", "新电话号码");
+		
+		vcan.InputPayPassWord("com.sht.smartcommunity:id/edtTxt_pwd");//原交易密码
+		
+		vcan.clickById("com.sht.smartcommunity:id/putoldcode_edt");//原验证码
+		
+		vcan.clickById("com.sht.smartcommunity:id/putnewcode_edt");//新验证码
+		
+		vcan.clickById("com.sht.smartcommunity:id/phonenumbersure_btn");//确认
+		
+		
+		
 		vcan.back();
 	}
 	
@@ -111,7 +124,7 @@ public class PageNewCityCards {
 		firstBindingCard();
 		cardPoints();
 		dealControl();
-//		phoneNum(); 下周再做
+//		phoneNum(); //进行中
 		accountCharge();
 		unbindingCard();
 	}
