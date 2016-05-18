@@ -25,7 +25,7 @@ import android.app.PendingIntent.CanceledException;
 import android.inputmethodservice.Keyboard;
 
 public class test extends BaseClass{
-
+	
 	private static V_Can vcan;
 	protected static PageManager pageManager;
 	
@@ -80,8 +80,7 @@ public class test extends BaseClass{
 		pageManager.getPageMyInfo().getLoginImageView();
 		
 		//侧边栏各进入一次并退出
-		pageManager.getPageMyInfo().gotoNewCityCard(); 
-		
+//		pageManager.getPageMyInfo().gotoNewCityCard(); 
 //		pageManager.getPageMyInfo().gotoMyCard(); 
 //		pageManager.getPageMyInfo().gotoPayPassword(); 
 //		pageManager.getPageMyInfo().gotoMyOrder(); //保险捕捉不到
@@ -92,6 +91,19 @@ public class test extends BaseClass{
 //		pageManager.getPageMyInfo().gotoAbout(); 
 		
 		pageManager.getPageMyInfo().BackHomeView();
+		
+		
+		
+		
+		vcan.NSLog("已回主页");
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		//选择城市
 //		pageManager.getPageHome().gotoSelectCity();
@@ -115,7 +127,6 @@ public class test extends BaseClass{
 		}
 		
 		/*
-		
 		
 //		driver.findElement(By.id("edtTxt_pwd")).sendKeys(Crypt.crypt("******"));
 //		driver.findElement(By.id("edtTxt_pwd")).getText().SetSecure();

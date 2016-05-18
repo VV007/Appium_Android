@@ -1,5 +1,7 @@
 package AccountInfomation;
 
+import org.openqa.selenium.By;
+
 import V_Can.V_Can;
 
 public class PageNewCityCards {
@@ -44,28 +46,61 @@ public class PageNewCityCards {
 	}
 	
 	//交易管理
-	public void dealControl(){
+	public void dealControl() throws InterruptedException{
 		vcan.clickById("com.sht.smartcommunity:id/llayout_pay");
-		vcan.clickById("com.sht.smartcommunity:id/select_result");
+		
+//		vcan.clickById("com.sht.smartcommunity:id/select_all");//点击选择交易类型
+//		vcan.clickById("com.sht.smartcommunity:id/select_all");//点击选择交易类型
+		vcan.NSLog("准备点击查询"); 
+		vcan.NSLog("准备点击查询");
+		vcan.NSLog("准备点击查询");
+/*
+ * 此处能获取ID，但是点击还有问题
+ * */
+		vcan.NSLog("查询被点击");
+		vcan.NSLog("查询被点击");
+		vcan.NSLog("查询被点击");
+		vcan.NSLog("查询被点击");
+		
 		vcan.back();
 	}
 	
 	//手机号码
-	public void phoneNum(){
+	public void phoneNum() throws InterruptedException{
 		vcan.clickById("com.sht.smartcommunity:id/llayout_account");
 		
-		vcan.clickByIdAndInput("com.sht.smartcommunity:id/putnewphone_edt", "新电话号码");
+		vcan.clickByIdAndInput("com.sht.smartcommunity:id/putnewphone_edt", "18911192276"); //新手机号
+		vcan.clickById("com.sht.smartcommunity:id/getnewcode_btn");//新手机号验证码
 		
 		vcan.InputPayPassWord("com.sht.smartcommunity:id/edtTxt_pwd");//原交易密码
 		
-		vcan.clickById("com.sht.smartcommunity:id/putoldcode_edt");//原验证码
+		vcan.clickById("com.sht.smartcommunity:id/putoldcode_edt");//输入原验证码
 		
-		vcan.clickById("com.sht.smartcommunity:id/putnewcode_edt");//新验证码
+		Thread.sleep(3500);
+		
+		vcan.clickById("com.sht.smartcommunity:id/putnewcode_edt");//输入新验证码
+		
+		double temp = 0;
+		while(true){
+			int oldMessage = 
+					vcan.getDriver().
+					findElement(By.id("com.sht.smartcommunity:id/putoldcode_edt")).
+					getText().toString().length();
+			
+			int newMessage = 
+					vcan.getDriver().
+					findElement(By.id("com.sht.smartcommunity:id/putnewcode_edt")).
+					getText().toString().length();
+			
+			if( (oldMessage == 4 && newMessage == 4) || temp == 100 ){
+				break;
+			}
+			temp++;
+			vcan.NSLog("我在循环");
+		}
 		
 		vcan.clickById("com.sht.smartcommunity:id/phonenumbersure_btn");//确认
-		
-		
-		
+		vcan.NSLog("返回吧");
 		vcan.back();
 	}
 	
@@ -123,8 +158,8 @@ public class PageNewCityCards {
 	public void viewAllInfo() throws InterruptedException{
 		firstBindingCard();
 		cardPoints();
-		dealControl();
-//		phoneNum(); //进行中
+		dealControl();//交易查询点击切换还有一定问题
+		phoneNum();  //需要替换备用手机号
 		accountCharge();
 		unbindingCard();
 	}
