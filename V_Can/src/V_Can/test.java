@@ -62,40 +62,40 @@ public class test extends BaseClass{
 		//登录入口
 		pageManager.getPageMyInfo().LoginPage();
 		
-		/**
-		 * 判断是否登录，如果未登录，则进入登录流程，如果已经登录，则返回
-		 * */
 		//注册
 //		pageManager.getPageRegister().DoRegister();
 		
-		if(vcan.iSLogin.equals("No") && (!vcan.IdIsExist("com.sht.smartcommunity:id/btn_exit"))){
-			//登录操作
-			pageManager.getPageLogin().LoginAction();
-		}else{
-			//进入个人中心
-			vcan.back();
-		}
-		vcan.iSLogin = "Yes";
+		//登录操作
+		pageManager.getPageLogin().LoginAction();
 		pageManager.getPageMyInfo().BackHomeView();
+		
+		//修改当前用户信息
+		pageManager.getPageMyInfo().LoginPage();
+		pageManager.getPageLogin().editMyInfo();
+		pageManager.getPageMyInfo().BackHomeView();
+		
+		
+		/*
+		 *侧边栏 
+		 * */
+		/*
 		pageManager.getPageMyInfo().getLoginImageView();
 		
 		//侧边栏各进入一次并退出
-//		pageManager.getPageMyInfo().gotoNewCityCard(); 
-//		pageManager.getPageMyInfo().gotoMyCard(); 
-//		pageManager.getPageMyInfo().gotoPayPassword(); 
-//		pageManager.getPageMyInfo().gotoMyOrder(); //保险捕捉不到
-//		pageManager.getPageMyInfo().gotoMyCoupons(); //因为没优惠券，未做查看详情
-//		pageManager.getPageMyInfo().gotoMemberPoints();
-//		pageManager.getPageMyInfo().gotoCall();
-//		pageManager.getPageMyInfo().gotoUpdate();
-//		pageManager.getPageMyInfo().gotoAbout(); 
+		pageManager.getPageMyInfo().gotoNewCityCard(); 
+		pageManager.getPageMyInfo().gotoMyCard(); 
+		pageManager.getPageMyInfo().gotoPayPassword(); 
+		pageManager.getPageMyInfo().gotoMyOrder(); //保险捕捉不到
+		pageManager.getPageMyInfo().gotoMyCoupons(); //因为没优惠券，未做查看详情
+		pageManager.getPageMyInfo().gotoMemberPoints();
+		pageManager.getPageMyInfo().gotoCall();
+		pageManager.getPageMyInfo().gotoUpdate();
+		pageManager.getPageMyInfo().gotoAbout(); 
 		
 		pageManager.getPageMyInfo().BackHomeView();
+		*/
 		
 		
-		
-		
-		vcan.NSLog("已回主页");
 		
 		
 		

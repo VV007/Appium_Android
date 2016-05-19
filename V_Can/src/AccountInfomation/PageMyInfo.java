@@ -28,7 +28,7 @@ public class PageMyInfo {
 	
 	//txt_name
 	public void clickLoginImageView(){
-		vcan.clickById("com.sht.smartcommunity:id/imageView_photo");
+		vcan.clickById("com.sht.smartcommunity:id/txt_name");
 	}
 	
 	//进入登录页面/个人中心
