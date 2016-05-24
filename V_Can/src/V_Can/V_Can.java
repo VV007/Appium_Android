@@ -140,6 +140,7 @@ public class V_Can {
 	//点击输入
 	public void clickByIdAndInput(String id,String text){
 		findById(id).click();
+		findById(id).clear();
 		findById(id).sendKeys(text);
 	}
 	
@@ -256,5 +257,20 @@ public class V_Can {
 		tapThePoint(315, 980);
 		tapThePoint(405, 980);
 		tapThePoint(495, 980);
+	}
+	
+	//ID查找，验证码长度，超时时间
+	public boolean SuccessInputVerification(String id,int VerificationCodeLength,int TimeOut){
+		int temp = 0;
+		while(true){
+			int MessageLength = driver.findElement(By.id(id)).getText().toString().length();
+			if(MessageLength == VerificationCodeLength){
+				return true;
+			}else if(temp == TimeOut){
+				return false;
+			}
+			temp++;
+			NSLog("我在循环");
+		}
 	}
 }

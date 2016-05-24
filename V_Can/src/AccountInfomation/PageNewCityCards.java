@@ -67,8 +67,9 @@ public class PageNewCityCards {
 	
 	//手机号码
 	public void phoneNum() throws InterruptedException{
-		vcan.clickById("com.sht.smartcommunity:id/llayout_account");
 		
+		vcan.clickById("com.sht.smartcommunity:id/llayout_account");
+		vcan.clickById("com.sht.smartcommunity:id/getoldcode_btn");
 		vcan.clickByIdAndInput("com.sht.smartcommunity:id/putnewphone_edt", "18911192276"); //新手机号
 		vcan.clickById("com.sht.smartcommunity:id/getnewcode_btn");//新手机号验证码
 		
@@ -80,24 +81,27 @@ public class PageNewCityCards {
 		
 		vcan.clickById("com.sht.smartcommunity:id/putnewcode_edt");//输入新验证码
 		
-		double temp = 0;
-		while(true){
-			int oldMessage = 
-					vcan.getDriver().
-					findElement(By.id("com.sht.smartcommunity:id/putoldcode_edt")).
-					getText().toString().length();
-			
-			int newMessage = 
-					vcan.getDriver().
-					findElement(By.id("com.sht.smartcommunity:id/putnewcode_edt")).
-					getText().toString().length();
-			
-			if( (oldMessage == 4 && newMessage == 4) || temp == 100 ){
-				break;
-			}
-			temp++;
-			vcan.NSLog("我在循环");
-		}
+		vcan.SuccessInputVerification("com.sht.smartcommunity:id/putoldcode_edt", 6, 200);
+		vcan.SuccessInputVerification("com.sht.smartcommunity:id/putnewcode_edt", 6, 200);
+		
+//		double temp = 0;
+//		while(true){
+//			int oldMessage = 
+//					vcan.getDriver().
+//					findElement(By.id("com.sht.smartcommunity:id/putoldcode_edt")).
+//					getText().toString().length();
+//			
+//			int newMessage = 
+//					vcan.getDriver().
+//					findElement(By.id("com.sht.smartcommunity:id/putnewcode_edt")).
+//					getText().toString().length();
+//			
+//			if( (oldMessage == 6 && newMessage == 6) || temp == 200 ){
+//				break;
+//			}
+//			temp++;
+//			vcan.NSLog("我在循环");
+//		}
 		
 		vcan.clickById("com.sht.smartcommunity:id/phonenumbersure_btn");//确认
 		vcan.NSLog("返回吧");
@@ -156,8 +160,8 @@ public class PageNewCityCards {
 	}
 	
 	public void viewAllInfo() throws InterruptedException{
-		firstBindingCard();
-		cardPoints();
+//		firstBindingCard();
+//		cardPoints();
 		dealControl();//交易查询点击切换还有一定问题
 		phoneNum();  //需要替换备用手机号
 		accountCharge();

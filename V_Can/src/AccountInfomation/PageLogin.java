@@ -45,14 +45,13 @@ public class PageLogin {
 		if(vcan.iSLogin.equals("No") && (!vcan.IdIsExist("com.sht.smartcommunity:id/btn_exit"))){
 			//登录操作
 			//登录失败->找回密码
-			/*
+			
 			InputName();
 			vcan.InputNewPayPassWord("edtTxt_pwd");
 			Thread.sleep(800);
 			PressConfirm();
 			
 			forgetPassWord();
-			*/
 			
 			InputName();
 			InputPassWord();
@@ -66,20 +65,7 @@ public class PageLogin {
 	}
 	
 	public void editMyInfo() throws InterruptedException{
-		vcan.clickById("com.sht.smartcommunity:id/llayout_photo");//点击选择头像
-		vcan.clickById("com.sht.smartcommunity:id/btn_women");//从手机相册选取
-		
-		vcan.tapThePoint(vcan.Screen_Width()/2, vcan.Screen_Height()/2);//点击正中选相册
-		vcan.NSLog("选择完相册");
-		
-		vcan.NSLog("选择完相册");
-		
-		Thread.sleep(2000);
-		vcan.tapThePoint(vcan.Screen_Width()/2, vcan.Screen_Height()/2);//正中的照片
-		vcan.NSLog("选择完相片");
-		vcan.clickById("com.android.gallery3d:id/filtershow_done");//确认保存
-		vcan.clickById("com.sht.smartcommunity:id/imageView_photo");//点击预览头像
-		vcan.tapThePoint(10, vcan.Screen_Height()/10);//收起背景
+		editPhoto();
 		
 		vcan.clickById("com.sht.smartcommunity:id/llayout_neckname");//修改昵称
 		vcan.clickByIdAndInput("com.sht.smartcommunity:id/edt_name", "VV");
@@ -92,6 +78,28 @@ public class PageLogin {
 		vcan.clickByIdAndInput("com.sht.smartcommunity:id/edtText_sign", "I'm just here waiting for you ~");
 		vcan.clickById("com.sht.smartcommunity:id/title_btn_right");
 		
+		addAddress();
+		
+		reSetPassword();
+		
+	}
+	
+	//换头像
+	public void editPhoto() throws InterruptedException{
+		vcan.clickById("com.sht.smartcommunity:id/llayout_photo");//点击选择头像
+		vcan.clickById("com.sht.smartcommunity:id/btn_women");//从手机相册选取
+		vcan.tapThePoint(vcan.Screen_Width()/2, vcan.Screen_Height()/2);//点击正中选相册
+		Thread.sleep(1000);
+		vcan.tapThePoint(vcan.Screen_Width()/4, vcan.Screen_Height()/2);//正中的照片
+		vcan.clickById("com.android.gallery3d:id/filtershow_done");//确认保存
+//		vcan.clickById("com.sht.smartcommunity:id/imageView_photo");//点击预览头像
+//		Thread.sleep(1000);
+//		vcan.clickById("com.sht.smartcommunity:id/imageView_photo");//收起背景
+		//没办法获取到最外层屏幕
+	}
+	
+	//新增地址
+	public void addAddress(){
 		vcan.clickById("com.sht.smartcommunity:id/llayout_address");//我的收获地址
 		vcan.clickById("com.sht.smartcommunity:id/btn_add_new_address");
 		vcan.clickByIdAndInput("com.sht.smartcommunity:id/et_name", "VCan");//收货人
@@ -102,8 +110,6 @@ public class PageLogin {
 		vcan.clickByIdAndInput("com.sht.smartcommunity:id/et_detail_address", "Beijing province Sunshine street Happy building 520 room");
 		vcan.clickById("com.sht.smartcommunity:id/saveaddress_btn");
 		vcan.back();
-		reSetPassword();
-		
 	}
 	
 	public void reSetPassword() throws InterruptedException{

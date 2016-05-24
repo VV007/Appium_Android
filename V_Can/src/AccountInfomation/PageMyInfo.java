@@ -78,9 +78,11 @@ public class PageMyInfo {
 		if(vcan.IdIsExist("com.sht.smartcommunity:id/initialize_name_et")){
 			// 首次设置交易密码，输入各证件信息   设置交易密码成功
 			dealpwd.setPwd();
+			vcan.NSLog("首次设置交易密码");
 		}else if(vcan.IdIsExist("com.sht.smartcommunity:id/finddealpassword_txt")){
 			// 第二次及之后，为修改交易密码 先重置，再忘记，
 			dealpwd.resetPwd();
+			vcan.NSLog("更改交易密码");
 		}else{
 			//什么都没显示时，直接退出，也有可能是未登录
 			vcan.back();
