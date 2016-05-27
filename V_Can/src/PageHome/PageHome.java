@@ -7,11 +7,64 @@ import org.openqa.selenium.By;
 import V_Can.VBase;
 import V_Can.V_Can;
 
-public class PageHome {
+public class PageHome extends PageOpenedCities{
 
 	V_Can vcan;
 	public PageHome(V_Can vcan){
+		super(vcan);
 		this.vcan = vcan;
+	}
+	
+	//扫描二维码
+	public void gotoScanQRCode(){
+		vcan.clickById("com.sht.smartcommunity:id/title_btn_right");
+	}
+	
+	//选择城市
+	public void gotoSelectCity(String cityName){
+//		vcan.clickByText("—选择城市—")
+		vcan.clickById("btn_dialog_cancel");
+		vcan.clickById("com.sht.smartcommunity:id/title_text");
+		SelectCityByName(cityName);
+		differentCityAction(cityName);
+	}
+	
+	public void differentCityAction(String cityName){
+		if(cityName == "北京市"){
+			cityBeijing();
+		}else if(cityName == "包头市"){
+			cityBeijing();
+		}else if(cityName == "吕梁市"){
+			cityBeijing();
+		}else if(cityName == "xx市"){
+			cityBeijing();
+		}else if(cityName == "xx市"){
+			cityBeijing();
+		}else if(cityName == "xx市"){
+			cityBeijing();
+		}
+	}
+	
+	public void cityBeijing(){
+		gotoGovernmentInfo();
+		gotoServiceGuide();
+		gotoCommunityService();
+		/*
+		 * 健康互联
+		 * 人人保险
+		 * 展恒基金测试
+		 * 生活周边
+		 * 电影票
+		 * */
+		gotoMovieTicket();
+	}
+	
+	public void cityBaotou(){
+		
+	}
+	
+	public void cityLvliang(){
+		
 	}
 	
 	public void upDateSoftware(){
@@ -23,72 +76,6 @@ public class PageHome {
 	}
 	
 	
-	/*
-	 * ******首页个功能入口******
-	 * */
 	
-	//扫描二维码
-	public void gotoScanQRCode(){
-		vcan.clickById("com.sht.smartcommunity:id/title_btn_right");
-	}
-	
-	//小马金融
-	public void gotoPonyFinance(){
-		vcan.clickByText("小马金融");
-	}
-	
-	//电影票
-	public void gotoMovieTicket(){
-		//取消更新
-		vcan.clickById("btn_dialog_cancel");
-		vcan.clickByText("电影票");
-	}
-	
-	//健康互联
-	public void gotoHealthyInternet(){
-		vcan.clickByText("健康互联");		
-	}
-	
-	//教育
-	public void gotoEducation(){
-		vcan.clickByText("教育");		
-	}
-		
-	//话费充值
-	public void gotoRecharge(){
-		vcan.clickByText("话费充值");		
-	}
-		
-	//选择城市
-	public void gotoSelectCity(){
-		vcan.clickById("btn_dialog_cancel");
-		vcan.clickById("com.sht.smartcommunity:id/title_text");
-		//vcan.clickByText("—选择城市—");		
-	}
-		
-	//社区服务
-	public void gotocommunityService(){
-		vcan.clickByText("社区服务");		
-	}
-		
-	//生活缴费
-	public void gotoLivingPayment(){
-		vcan.clickByText("生活缴费");		
-	}
-		
-	//乐生活
-	public void gotoHappyLife(){
-		vcan.clickByText("乐生活");		
-	}
-		
-	//银行服务
-	public void gotoBankingServices(){
-		vcan.clickByText("银行服务");		
-	}
-	
-	//更多
-	public void gotoMore(){
-					
-	}
 	
 }

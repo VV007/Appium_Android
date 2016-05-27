@@ -45,14 +45,14 @@ public class PageLogin {
 		if(vcan.iSLogin.equals("No") && (!vcan.IdIsExist("com.sht.smartcommunity:id/btn_exit"))){
 			//登录操作
 			//登录失败->找回密码
-			
+			/*
 			InputName();
 			vcan.InputNewPayPassWord("edtTxt_pwd");
 			Thread.sleep(800);
 			PressConfirm();
 			
 			forgetPassWord();
-			
+			*/
 			InputName();
 			InputPassWord();
 			Thread.sleep(800);

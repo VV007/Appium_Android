@@ -52,16 +52,13 @@ public class test extends BaseClass{
 		vcan = new V_Can(driver);
 		pageManager = new PageManager(vcan);
 		
-//		pageManager.getPageNavigation().goToExploreTab();
-//		pageManager.getPageNavigation().goToHappyTab();
-//		pageManager.getPageNavigation().goToHomeTab();
 		Thread.sleep(600);
 		
 		while(true){
-		
+
 		//登录入口
 		pageManager.getPageMyInfo().LoginPage();
-		
+
 		//注册
 //		pageManager.getPageRegister().DoRegister();
 		
@@ -69,14 +66,13 @@ public class test extends BaseClass{
 		pageManager.getPageLogin().LoginAction();
 		pageManager.getPageMyInfo().BackHomeView();
 		
+		/*
 		//修改当前用户信息
 		pageManager.getPageMyInfo().LoginPage();
 		pageManager.getPageLogin().editMyInfo();
 		pageManager.getPageMyInfo().BackHomeView();
 		
-		/*侧边栏
-		 *
-		 * */
+		//**侧边栏** 
 		pageManager.getPageMyInfo().getLoginImageView();
 		
 		//侧边栏各进入一次并退出
@@ -90,23 +86,14 @@ public class test extends BaseClass{
 		pageManager.getPageMyInfo().gotoUpdate();
 		pageManager.getPageMyInfo().gotoAbout(); 
 		
-		pageManager.getPageMyInfo().BackHomeView();
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		pageManager.getPageMyInfo().BackHomeView();	
+		*/	
+
 		//选择城市
-//		pageManager.getPageHome().gotoSelectCity();
-//		pageManager.getPageOpenedCities().SelectCityByName();
-	
+		pageManager.getPageHome().gotoSelectCity("北京市");
+
+		
+		
 		//选择电影 
 //		pageManager.getPageHome().gotoMovieTicket();
 //		pageManager.getPageMovies().SelectMovie();
@@ -125,6 +112,9 @@ public class test extends BaseClass{
 		}
 		
 		/*
+//		pageManager.getPageNavigation().goToExploreTab();
+//		pageManager.getPageNavigation().goToHappyTab();
+//		pageManager.getPageNavigation().goToHomeTab();
 		
 //		driver.findElement(By.id("edtTxt_pwd")).sendKeys(Crypt.crypt("******"));
 //		driver.findElement(By.id("edtTxt_pwd")).getText().SetSecure();

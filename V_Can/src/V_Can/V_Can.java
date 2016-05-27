@@ -223,7 +223,7 @@ public class V_Can {
 	//登录密码
 	public void InputPassWord(String id){
 		clickById(id);
-		tapThePoint(115, 1368);
+		tapThePoint(115, 1368);  //切换
 		clickById(id);
 		tapThePoint(44, 980);
 		tapThePoint(134, 980);
