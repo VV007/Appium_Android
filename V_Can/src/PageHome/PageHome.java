@@ -49,13 +49,10 @@ public class PageHome extends PageOpenedCities{
 		gotoGovernmentInfo();
 		gotoServiceGuide();
 		gotoCommunityService();
-		/*
-		 * 健康互联
-		 * 人人保险
-		 * 展恒基金测试
-		 * 生活周边
-		 * 电影票
-		 * */
+		gotoHealthyInternet();
+		gotoPersonInsurance();
+		ZhanhengFundTest();
+		gotoLifeSurrounding();
 		gotoMovieTicket();
 	}
 	

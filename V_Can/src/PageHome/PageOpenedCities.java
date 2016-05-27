@@ -12,7 +12,6 @@ public class PageOpenedCities {
 	
 	public void SelectCityByName(String cityName){
 		vcan.clickByText(cityName);
-//		vcan.back();
 	}
 	
 	/*
@@ -47,11 +46,10 @@ public class PageOpenedCities {
 		vcan.back();
 	}
 	
-	
-	
 	//小马金融
 	public void gotoPonyFinance(){
 		vcan.clickByText("小马金融");
+		vcan.back();
 	}
 	
 	//电影票
@@ -59,21 +57,31 @@ public class PageOpenedCities {
 		//取消更新
 		vcan.clickById("btn_dialog_cancel");
 		vcan.clickByText("电影票");
+		vcan.back();
 	}
 	
 	//健康互联
 	public void gotoHealthyInternet(){
-		vcan.clickByText("健康互联");		
+		vcan.clickByText("健康互联");	
+		vcan.back();
+	}
+	
+	//人人保险
+	public void gotoPersonInsurance(){
+		vcan.clickByText("人人保险");	
+		vcan.back();
 	}
 	
 	//教育
 	public void gotoEducation(){
-		vcan.clickByText("教育");		
+		vcan.clickByText("教育");	
+		vcan.back();
 	}
 		
 	//话费充值
 	public void gotoRecharge(){
-		vcan.clickByText("话费充值");		
+		vcan.clickByText("话费充值");
+		vcan.back();
 	}
 	
 	//社区服务
@@ -84,24 +92,36 @@ public class PageOpenedCities {
 	
 	//生活缴费
 	public void gotoLivingPayment(){
-		vcan.clickByText("生活缴费");		
+		vcan.clickByText("生活缴费");	
+		vcan.back();
 	}
 	
 	//生活周边
+	public void gotoLifeSurrounding(){
+		vcan.clickByText("生活周边");
+		vcan.back();
+	}
 	
+	//展恒基金测试
+	public void ZhanhengFundTest(){
+		vcan.clickByText("展恒基金测试");	
+		vcan.back();
+	}
 	
 	//乐生活
 	public void gotoHappyLife(){
-		vcan.clickByText("乐生活");		
+		vcan.clickByText("乐生活");	
+		vcan.back();
 	}
 		
 	//银行服务
 	public void gotoBankingServices(){
-		vcan.clickByText("银行服务");		
+		vcan.clickByText("银行服务");	
+		vcan.back();
 	}
 	
 	//更多
 	public void gotoMore(){
-					
+		vcan.back();	
 	}
 }
