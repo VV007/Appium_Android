@@ -25,7 +25,8 @@ public class PageOpenedCities {
 	
 	public void gotoServiceGuide(){		
 		vcan.clickByText("办事指南");
-//		vcan.tapThePoint(vcan.Screen_Width()/6, 200);
+		
+//		vcan.tapThePoint(160, 214);
 //		vcan.back();
 //		vcan.tapThePoint(vcan.Screen_Width()/2, 200);
 //		vcan.back();
@@ -57,6 +58,24 @@ public class PageOpenedCities {
 		//取消更新
 		vcan.clickById("btn_dialog_cancel");
 		vcan.clickByText("电影票");
+		
+		//选择城市弹窗
+		if(vcan.IdIsExist("com.sht.smartcommunity:id/btn_dialog_ok")){
+			vcan.clickById("com.sht.smartcommunity:id/btn_dialog_ok");
+			vcan.clickByText("北京");
+		}
+		
+		vcan.clickById("com.sht.smartcommunity:id/tv_is_hit");
+		vcan.clickById("com.sht.smartcommunity:id/tv_on_next");
+		vcan.clickById("com.sht.smartcommunity:id/btn_cinema");
+		vcan.waitForLoading();
+//		vcan.clickById("com.sht.smartcommunity:id/tv_address");
+//		vcan.clickById("com.sht.smartcommunity:id/tv_address");
+//		
+//		vcan.clickById("com.sht.smartcommunity:id/tv_address");
+//		vcan.clickById("com.sht.smartcommunity:id/tv_address");
+//		vcan.clickById("com.sht.smartcommunity:id/tv_address");
+		
 		vcan.back();
 	}
 	
@@ -87,6 +106,14 @@ public class PageOpenedCities {
 	//社区服务
 	public void gotoCommunityService(){
 		vcan.clickByText("社区服务");
+		
+		vcan.clickById("com.sht.smartcommunity:id/llayout_trading_query");
+		vcan.back();
+		
+		vcan.clickById("com.sht.smartcommunity:id/llayout_query_pay");
+		//可能会有刷新等待
+		vcan.back();
+		
 		vcan.back();
 	}
 	

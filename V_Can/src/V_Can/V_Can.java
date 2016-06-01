@@ -273,4 +273,11 @@ public class V_Can {
 			NSLog("我在循环");
 		}
 	}
+	
+	//等待加载风火轮
+	public void waitForLoading(){
+		while(IdIsExist("com.sht.smartcommunity:id/iv_loading")){
+			NSLog("加载中...");
+		}
+	}
 }

@@ -33,15 +33,15 @@ public class PageHome extends PageOpenedCities{
 		if(cityName == "北京市"){
 			cityBeijing();
 		}else if(cityName == "包头市"){
-			cityBeijing();
+			cityBaotou();
 		}else if(cityName == "吕梁市"){
-			cityBeijing();
+			cityLvliang();
 		}else if(cityName == "xx市"){
-			cityBeijing();
+			;
 		}else if(cityName == "xx市"){
-			cityBeijing();
+			;
 		}else if(cityName == "xx市"){
-			cityBeijing();
+			;
 		}
 	}
 	

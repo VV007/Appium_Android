@@ -66,6 +66,7 @@ public class test extends BaseClass{
 		pageManager.getPageLogin().LoginAction();
 		pageManager.getPageMyInfo().BackHomeView();
 		
+		
 		/*
 		//修改当前用户信息
 		pageManager.getPageMyInfo().LoginPage();
@@ -91,13 +92,8 @@ public class test extends BaseClass{
 
 		//选择城市
 		pageManager.getPageHome().gotoSelectCity("北京市");
-
 		
-		
-		//选择电影 
-//		pageManager.getPageHome().gotoMovieTicket();
 //		pageManager.getPageMovies().SelectMovie();
-		
 		
 		//个人中心入口 -> 注销
 		if(vcan.iSLogin.equals("Yes")){
