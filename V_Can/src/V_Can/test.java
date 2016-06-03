@@ -89,10 +89,11 @@ public class test extends BaseClass{
 		
 		pageManager.getPageMyInfo().BackHomeView();	
 		*/	
-
+		
 		//选择城市
 		pageManager.getPageHome().gotoSelectCity("北京市");
 		
+		pageManager.getPageNavigation().goToHappyTab();
 //		pageManager.getPageMovies().SelectMovie();
 		
 		//个人中心入口 -> 注销
@@ -104,12 +105,11 @@ public class test extends BaseClass{
 		else{
 			//进入个人中心	
 		}
-		
+			
 		}
 		
 		/*
 //		pageManager.getPageNavigation().goToExploreTab();
-//		pageManager.getPageNavigation().goToHappyTab();
 //		pageManager.getPageNavigation().goToHomeTab();
 		
 //		driver.findElement(By.id("edtTxt_pwd")).sendKeys(Crypt.crypt("******"));

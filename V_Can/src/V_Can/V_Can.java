@@ -118,9 +118,9 @@ public class V_Can {
     		if(element.isDisplayed()){
     			return true;
     		}
-    	}catch(Exception e){
+    	}catch(Exception e){NSLog("走的这个2");
     		return false;
-    	}
+    	}NSLog("走的这个3");
 		return false;
 	}
 	
@@ -153,8 +153,8 @@ public class V_Can {
 	
 	//根据Class和Index点击Item
 	public void clickByClassAndIndx(String cls,int index){
-		if(!(findByClassAndIndex(cls,index) == null)){
-			findByIdAndIndex(cls,index).click();
+		if((findByClassAndIndex(cls,index).isDisplayed() == true)){
+			findByClassAndIndex(cls, index).click();
 		}
 	}
 	

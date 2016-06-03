@@ -1,5 +1,8 @@
 package PageHome;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
 import V_Can.V_Can;
 
 public class PageOpenedCities {
@@ -69,12 +72,19 @@ public class PageOpenedCities {
 		vcan.clickById("com.sht.smartcommunity:id/tv_on_next");
 		vcan.clickById("com.sht.smartcommunity:id/btn_cinema");
 		vcan.waitForLoading();
-//		vcan.clickById("com.sht.smartcommunity:id/tv_address");
-//		vcan.clickById("com.sht.smartcommunity:id/tv_address");
-//		
-//		vcan.clickById("com.sht.smartcommunity:id/tv_address");
-//		vcan.clickById("com.sht.smartcommunity:id/tv_address");
-//		vcan.clickById("com.sht.smartcommunity:id/tv_address");
+		
+		//选择地区
+		vcan.clickById("com.sht.smartcommunity:id/tv_address");
+		vcan.tapThePoint(123, 234);
+		vcan.waitForLoading();
+		//选择排序
+		vcan.clickById("com.sht.smartcommunity:id/tv_sort");
+		vcan.tapThePoint(vcan.Screen_Width()-123, 234);
+		vcan.waitForLoading();
+		
+		if(vcan.ClassIsExist("android.widget.LinearLayout")){
+			vcan.clickByClassAndIndx("android.widget.LinearLayout", 0);
+		}
 		
 		vcan.back();
 	}
