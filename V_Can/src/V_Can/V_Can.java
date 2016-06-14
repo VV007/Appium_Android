@@ -276,8 +276,8 @@ public class V_Can {
 	
 	//等待加载风火轮
 	public void waitForLoading(){
-		while(IdIsExist("com.sht.smartcommunity:id/iv_loading")){
-			NSLog("加载中...");
+		while(IdIsExist("com.sht.smartcommunity:id/iv_loading") || IdIsExist("com.sht.smartcommunity:id/pull_to_refresh_header")){
+			NSLog("刷新/加载中...");
 		}
 	}
 }

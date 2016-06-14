@@ -21,7 +21,7 @@ public class PageHome extends PageOpenedCities{
 	}
 	
 	//选择城市
-	public void gotoSelectCity(String cityName){
+	public void gotoSelectCity(String cityName) throws InterruptedException{
 //		vcan.clickByText("—选择城市—")
 		vcan.clickById("btn_dialog_cancel");
 		vcan.clickById("com.sht.smartcommunity:id/title_text");
@@ -29,7 +29,7 @@ public class PageHome extends PageOpenedCities{
 		differentCityAction(cityName);
 	}
 	
-	public void differentCityAction(String cityName){
+	public void differentCityAction(String cityName) throws InterruptedException{
 		if(cityName == "北京市"){
 			cityBeijing();
 		}else if(cityName == "包头市"){
@@ -45,7 +45,7 @@ public class PageHome extends PageOpenedCities{
 		}
 	}
 	
-	public void cityBeijing(){
+	public void cityBeijing() throws InterruptedException{
 		gotoGovernmentInfo();
 		gotoServiceGuide();
 		gotoCommunityService();

@@ -94,10 +94,13 @@ public class test extends BaseClass{
 		pageManager.getPageHome().gotoSelectCity("北京市");
 		
 		pageManager.getPageNavigation().goToHappyTab();
+		pageManager.getPageHappyLife().visitHappyLife();
+		
 //		pageManager.getPageMovies().SelectMovie();
 		
 		//个人中心入口 -> 注销
 		if(vcan.iSLogin.equals("Yes")){
+			pageManager.getPageNavigation().goToHomeTab();
 			pageManager.getPageMyInfo().LoginPage();
 			pageManager.getPageMyInfo().LogOutAction();
 			vcan.iSLogin = "No";
