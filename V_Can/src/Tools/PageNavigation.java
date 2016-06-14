@@ -12,16 +12,19 @@ public class PageNavigation {
 	
 	public void goToHomeTab(){
 		vcan.clickById("com.sht.smartcommunity:id/llayout_homepage");
+		vcan.waitForLoading();
 //		vcan.clickByText("新城势");
 	}
 	
 	public void goToHappyTab(){
 		vcan.clickById("com.sht.smartcommunity:id/rlayout_message");
+		vcan.waitForLoading();
 //		vcan.clickByText("乐生活");
 	}
 	
 	public void goToExploreTab(){
 		vcan.clickById("com.sht.smartcommunity:id/llayout_neighbor");
+		vcan.waitForLoading();
 //		vcan.clickByText("发现");
 	}
 }

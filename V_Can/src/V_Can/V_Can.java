@@ -280,4 +280,19 @@ public class V_Can {
 			NSLog("刷新/加载中...");
 		}
 	}
+
+	//递归->返回到进来时的某一界面   temp为寻找次数，到达该次数后，如果还未找到，则放弃寻找
+	public void backToThePage(String id,int temp){
+		if(temp < 0){
+			NSLog("未能找到该页面");
+		}else{
+			if(!IdIsExist(id)){
+				back();
+				temp--;
+				backToThePage(id,temp);
+			}else{
+				NSLog("成功返回到该页面");
+			}
+		}
+	}
 }

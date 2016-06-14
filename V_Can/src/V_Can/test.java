@@ -47,11 +47,13 @@ public class test extends BaseClass{
 		capabilities.setCapability("appActivity", appActivity);
 		capabilities.setCapability("noSign", true);
 		capabilities.setCapability("noReset", true);
+		capabilities.setCapability("unicodeKeyboard", true);
+		capabilities.setCapability("resetKeyboard", true);
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
 		
 		vcan = new V_Can(driver);
 		pageManager = new PageManager(vcan);
-		
+		  
 		Thread.sleep(600);
 		
 		while(true){
@@ -90,13 +92,18 @@ public class test extends BaseClass{
 		pageManager.getPageMyInfo().BackHomeView();	
 		*/	
 		
+		
+		
 		//选择城市
-		pageManager.getPageHome().gotoSelectCity("北京市");
+//		pageManager.getPageHome().gotoSelectCity("北京市");     //还未修改完成
 		
-		pageManager.getPageNavigation().goToHappyTab();
-		pageManager.getPageHappyLife().visitHappyLife();
 		
-//		pageManager.getPageMovies().SelectMovie();
+		
+//		pageManager.getPageNavigation().goToHappyTab();
+//		pageManager.getPageHappyLife().visitHappyLife();
+		
+		pageManager.getPageNavigation().goToExploreTab();
+		pageManager.getPageExplore().clickFoodItem(0);
 		
 		//个人中心入口 -> 注销
 		if(vcan.iSLogin.equals("Yes")){
